@@ -1,0 +1,100 @@
+Artificial Intelligence vs Neural Networks vs Machine Learning 
+	Artificial Intelligence 
+		- The effort to automate intellectual tasks normally performed by human beings.
+
+		- Can computers think?(independently) 
+
+		- Artificial Intelligence were pre-defined rules in the codes, that follow a set of instructions. No deep-learning. All scenarios needed to be hard-coded, a very good set of rules.
+
+		- Artificial Intelligence can be simple or complex 
+
+		- A.I can be as simple as tic-tac-toe with a set of hard coded rules.
+
+		- Pathfinding algorithm used in Pac-Man, basically is a primitive simple form of A.I. 
+
+		- Artificial Intelligence <
+			- Machine Learning <
+				- Nueral Networks <
+					- Deep Learning 
+
+	Machine Learning 
+		- figures out the pre-set rules for us, instead of developers taking in a lot of pre-defined input data
+
+		- machine learning generates the rules for us
+
+		- Rather than giving the program the rules, an algorithm finds the rules for us. 
+
+		- DATA, RULES -> ANSWERS
+			- classical programming model
+
+		- DATA, ANSWERS -> RULES
+			- machine learning model
+
+		- The training data, inputted data is what comes up with the rules 
+
+	Nueral Network 
+		- A form of machine learning that uses a layered representation of data. 
+
+		- input layer, output layer, rules connect those layers
+
+		- nueral networks/deep learning consists of multiple, different layers versus contrasting of just one 
+
+		- The data is transformed through different layers, and there will be connections formed that will eventually spit out a more sophisticated view of the model's output 
+
+		- multi-stage informational extraction, layered representation of data versus just the standard one or two layers and even zero layers in A.I.
+
+		- NOT MODELED AFTER THE BRAIN, NO CONNECTION
+
+	- INPUT INFORMATION IS CALLED OUR FEATURES(independent variables)
+
+	- FEATURES USED TO PREDICT SOMETHING, WHAT WE FED INTO THE MODEL
+
+	- THE LABEL(dependent variables), or the OUPUT; is what we are trying to PREDICT/EXPLAIN
+
+	- WE train our model, and then we also input some rules and we give our model our TRAINING DATA. When we test the data, we only pass the features in order to predict or analyze how well our OUTPUT and our MODEL is predicting. The INPUT DATA is what trains the MODEL.
+
+DIFFERENT TYPES OF MACHINE LEARNING
+	- Unsupervised Learning
+		- When we only have features 
+
+		- Given absolutely no LABEL(s), we want our model to predict our OUTPUT for us 
+
+		- The FEATURES, without the output; we want to create some sort of model that can cluster, or group these datas and try to CLASSIFY them in the hopes of discovering our OUTPUT 
+
+		- Pass all the features, and have the model to create the groupings/label(s). 
+
+		- When we pass a NEW INPUT FEATURE, we can PREDICT THE GROUPING of that clustered learning.
+
+	- Supervised Learning 
+		- Features ->(correspond) to some LABEL(s) *corresponds == predict 
+
+		- When we have both the Features and Labels, we 'supervise' the model in order to predict and analyze our LABEL(s) more precisely.
+
+		- Supervising the model, we use the raw trainig data, with an algorith and then inputs the training data and expected output in order to process and predict the LABEL and Output more accurately
+
+		- PROS: When you have a ton of information, and the outputs this is the best type of model for it 
+
+	- Reinforcement Learning
+		- When you don't have an data 
+
+		- you have an agent, environment, reward
+
+		- ex: if you have a game to get to the flag, and you have a set of pre-set rules.
+
+		- MODEL TO FIGURE THE PATH
+
+		- person is represented as the agent 
+
+		- the environment is the environmnet 
+
+		- reward is what the person gets, when he does something properly/correctly 
+
+		- as the agent gets closer or further away from the reward; then he is given a negative/positive reward. It will remember where it is given positive, and negative rewards and does its best to achieve only (+) rewards.
+
+		- the agent randomly explores, and its own insights to maximize the REWARD, thus when the agent understand/determines the path to maximize the REWARD; it will remember/'learn' and the agent or the next agent will be even more efficient. 
+
+		- does not need all the data
+
+		- EXPLORE THE DATA
+
+		- depends on the enivronment; could be long or short depends solely on the environment and agent's expertise.
