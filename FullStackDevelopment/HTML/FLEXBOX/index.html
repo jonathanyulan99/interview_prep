@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>TEST FLEXBOX</title>
+ <style>
+   /*MEDIA QUERY:very easy way to make adjustments when the viewport changes */
+    @media(min-width:768px){
+      p{
+        font-style: italic;}
+      
+      .container-1{
+      display:flex;
+      justify-content:space-around;
+      align-items:flex-start;
+      /*flex-end: goes to the bottom*/
+      align-items:flex-end;
+      /*default align-items, which changes the horizontal height */
+      align-items:stretch;
+      /*align-items:center centers the item*/
+      align-items:center;
+      /*flex-direction:row is the default setting doesnt work with flex property;*/
+      /*flex-direction:column;*/
+      flex-direction: row;}
+
+      .container-2{
+      /*two display flex display side by side*/
+      display:flex;
+      /*justify-content:flex-start; | flex-end | center | space-between | space-around;*/
+      justify-content:right;}
+
+      .container-3{
+      /*makes the div container or container 3 div called 'container' is now a flex-container*/
+      display:flex;
+      /*wraps around the bottom, so it doesn't get squished */
+      /* flex-wrap:nowrap | wrap | wrap reverse */
+      flex-wrap:nowrap;}
+    }
+    
+    @media(min-width:1000px){
+       p{
+         font-weight:900;}
+   }
+
+    .container-3{
+      /*makes the div container or container 3 div called 'container' is now a flex-container*/
+      display:flex;
+      /*wraps around the bottom, so it doesn't get squished */
+      /* flex-wrap:nowrap | wrap | wrap reverse */
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+
+  .container-1 div, .container-2 div, .container-3 div{
+    /* MARGIN > BORDER > PADDING > CONTENT*/
+    /* Margin is the MOST OUTTER border of the container to the other containers or its sibling elements*/
+    margin:1pt;
+    /* BORDER is the actual border of the container or DOM element, middle component*/
+    border:5pt  solid rgb(234, 20, 237);
+    /* Padding is the closest layer to the content being displayed */
+    padding:3%;
+    /*align-content using the flex container this is not used in divs that do not have the property display:flex instead use the justify-content*/
+  }
+
+  .box-1{
+   flex:3;
+   order:3;
+  }
+  
+  .box-2{
+   flex:3;
+   order:2;
+  }
+
+  .box-3{
+   /*flex property increases the individual container or flex_item */
+   flex:3;
+   /*order property changes the position of the flex_item in the flex_container*/
+   order:1;
+  }
+
+  /*flex_item*/
+  .container-2-box{
+    /*width:30%;*/
+    /*width works as CSS property but flex-basis is a better option*/ 
+    flex-basis:33%;
+  }
+
+  .container-3-box{
+    /*width:30%;*/
+    /*width works as CSS property but flex-basis is a better option*/ 
+    flex-basis:22%;
+  }
+ </style>
+</head>
+<body> 
+  <div class="container-1">
+    <div class="box-1">
+    <h3>Box One</h3>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate, placeat!<p>
+    </div>
+    <div class="box-2">
+    <h3>Box Two</h3>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis, atque.</p>
+    </div>
+    <div class="box-3">
+    <h3>Box Three</h3>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui, consequuntur.</p>
+    </div>
+  </div>
+
+  <div class="container-2">
+    <div class="container-2-box">
+    <h3>Box 4</h3>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate, placeat!<p>
+    </div>
+    <div class="container-2-box">
+    <h3>Box 5</h3>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis, atque.</p>
+    </div>
+    <div class="container-2-box">
+    <h3>Box 6</h3>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui, consequuntur.</p>
+    </div>
+    <div class="container-2-box">
+    <h3>NEW BOX</h3>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui, consequuntur.</p>
+    </div>
+  </div>
+
+  <div class="container-3">
+    <div class="container-3-box">
+    <h3>Box 9</h3>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate, placeat!<p>
+    </div>
+    <div class="container-3-box">
+    <h3>Box 8</h3>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis, atque.</p>
+    </div>
+    <div class="container-3-box">
+    <h3>Box 7</h3>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui, consequuntur.</p>
+    </div>
+    <div class="container-3-box">
+    <h3>Box 10</h3>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui, consequuntur.</p>
+    </div>
+    <div class="container-3-box">
+    <h3>Box 11</h3>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui, consequuntur.</p>
+    </div>
+    <div class="container-3-box">
+    <h3>Box 12</h3>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui, consequuntur.</p>
+    </div>
+  </div>
+</body>
+</html>

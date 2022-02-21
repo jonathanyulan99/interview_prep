@@ -1,0 +1,107 @@
+.grid-container{
+ display:-ms-grid;
+ display:grid;
+
+ /*ms-anything going to be specific for microsoft cause its weird browser
+ -ms-grid-column-span:100px 200px 100px;
+ grid-template-columns:1fr 2fr 1fr;
+ you can use fractions, like flex-grow, 2fr twice as much space as 1fr*/
+ 
+ /*use the simple repeat command repeat(how_many_repeats, how_large_px)*/
+ grid-template-columns:repeat(5,200px);
+ /*grid-template-columns:repeat(5,250px);*/
+ 
+ /*grid-auto-rows: 150px; Now all rows not defined follow the auto-row:rule*/
+ grid-auto-rows: minmax(350px,auto);
+ /* grid-auto-rows and grid-auto-columns are essentially catch alls for any components of the DOM that are not identified and classfied by a selector; it essentially fixes it on its own and should not be used with the grid-template-rows:repeat(amount_of_times,min_pixel)
+ grid-template-rows:repeat(1,600px);
+ use the minmax(minsize_content,maxsize_content) *can use auto here*/
+ /* grid-row-gap: pixels*/
+ grid-row-gap:20px;
+ grid-column-gap:10px;
+ /*grid-gap sets both the row-gap and column-gap properties*/
+ grid-gap:20px;
+
+ /* grid-template-areas: "header header" */
+ /* VERY USEFUL */
+ /*grid-template-areas: 
+                       " header header"
+                       "sidebar content"
+                       "sidebar content content"
+                       */
+
+ /* items and content */
+ /* align-items/justify-items:individual grid items
+    align-content/justify-content:is the container we are working on
+    justify-content:space-around|center | end | start;
+    justify-content:center;
+    align-content:center;
+    justify-items:center; 
+    align-items:center;
+    X-items:grid-components 
+    X-content:grid-containers*/
+}
+
+.grid-container div{
+ background-color:blue;
+ border: 10px solid red;
+ margin:1%;
+ padding:10px;
+}
+
+.grid-item{
+ font-style:oblique;
+ font-weight: 1000;
+ font-size:200%;
+ color:white;
+ grid-column-start:1;
+ grid-column-end:-1;
+ /*grid-row and grid-column are shorthands for the above respected row/col rules*/
+ /*grid-row is more specific should be a deeper selector but this is based on your understanding; can be different depending on case */
+ grid-row:span 2;
+}
+
+.grid-item-1{
+ color:hsla(0, 0%, 100%,.3);
+ /* grid-column-start and grid-column-end */
+ /* remember that breaks in the DOM are lines; the padding/border etc will impact the rows begining and ending */
+ grid-column-end:5;
+ /*notice the inheritance rule that takes from .grid-item use this to your advantage instead of using many more complex selectors than are required. REMEMEBER specificity and importance is the deeper the CSS rule/*in-line CSS the most specific !importance rule as well; the last CSS rule will override any previous CSS selector property:value 
+ ex: given here as grid-column-end are specific but the same for the .grid-item but not the .grid-item-1 which is why this works */
+ /* OVERRIDE HERE */
+ /* OVERRIDING HERE with align-self to go over the justify-items and align-items */
+ align-self:start;
+ justify-self:center;
+}
+
+.grid-item-2{
+ color:pink;
+ /*grid-row and grid-column can also use the keyword SPAN
+  grid-column:span 1;
+  grid-column:span 2;
+  */
+ grid-column-start:2;
+ grid-column-end:6;
+ /*grid-row-start/end*/
+}
+
+.grid-item-3{
+ color:gold;
+ grid-column:3/7;
+}
+
+.grid-item-4{
+ color:purple;
+ grid-column-start:4;
+ grid-column-end:8;
+ grid-row:7/9;
+}
+
+.grid-item-5{
+ /* this will INHERIT THE CSS SELECTORS from the generic .grid-item CSS selector */
+ color:hsla(0,85%,45%,.9);
+ grid-column:5/9;
+/* grid-column-end:-1 shorcut to the end of the page*/
+/*grid-column: start / end;  combined shorthand rule for grid-column-start/end*/
+grid-row:9/11;
+}
