@@ -1,0 +1,72 @@
+h1{
+ color:teal;
+ text-align:center;
+ padding:10px;
+ border: 10px rebeccapurple solid;
+}
+
+h2.flex-header{
+ color:red;
+ text-align:left;
+ padding:10px;
+ border:5px rebeccapurple dashed;
+}
+
+h2.grid-header{
+ color:blue;
+ text-align:red;
+ padding:10px;
+ border:5px orange solid;
+}
+
+.container{
+ padding:2rem;
+}
+
+.container.flex{
+ padding:2rem;
+ display:flex;
+ /*Flex's layout is defined by the flex_items that are populating that flex_container*/
+ flex-wrap:wrap;
+ gap:1rem;
+}
+
+.cell{
+ padding:1rem;
+ background-color:aqua;
+}
+
+.container.grid,.container.grid-1,.container.grid-2{
+ grid-gap:1rem;
+ display:grid;
+ grid-template-columns: 1fr 2fr 1fr;
+ /*RESPONSIVE WEB DESIGN use the grid-template-columns property with attribute grid-template-columns:repeat(auto-fill,minmax(20rem,1fr));*/
+ grid-template-columns:repeat(auto-fill,minmax(20rem,1fr));
+ }
+
+ .flex,.flex-1,.flex-2{
+  display:flex;
+  gap:1rem;
+ }
+
+ .flex-cell.flex-cell-1,.flex-cell.flex-cell-4,.flex-cell.flex-cell-7{
+  background-color:red;
+ }
+
+ .flex-cell.flex-cell-2,.flex-cell.flex-cell-5,.flex-cell.flex-cell-8{
+  background-color:blue;
+ }
+
+ .flex-cell-3,.flex-cell-6,.flex-cell-9{
+  background-color:blueviolet;
+ }
+
+ .flex > .flex-cell, .flex-1 > .flex-cell, .flex-2 > .flex-cell{
+  /*each flex item will take as much as space as possible */
+  flex-grow:1;
+ }
+
+ .flex > .cell:nth-child(2),.flex-1 > .cell:nth-child(2),.flex-2 > .cell:nth-child(2){
+  flex-grow:2;
+ }
+
