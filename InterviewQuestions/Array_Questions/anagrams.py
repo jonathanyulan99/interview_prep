@@ -14,6 +14,8 @@ def isAnagram(s:str,t:str) -> bool:
     
     return True 
 
+## Alternatively you can use a Counter(string s, string t) to create a dictionary with the counter of each value in the list 
+
 print(isAnagram('god','odg'))
 print(isAnagram('abcdef','ffffff'))
 print(isAnagram('nahtanoj','jonathan'))
