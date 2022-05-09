@@ -14,4 +14,4 @@ def lengthOfLongestSubstring(s:str)->int:
         longest = max(longest,right_ptr-left_ptr+1)
     return longest
 
-print(lengthOfLongestSubstring("bbbbbb"))
+print(lengthOfLongestSubstring("abdcedef"))
