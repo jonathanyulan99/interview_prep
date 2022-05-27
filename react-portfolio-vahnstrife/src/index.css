@@ -45,7 +45,11 @@
         background: var(--color-bg);
         color: var(--color-white);
         line-height: 1.7;
-        background-image: url(../src/assets/wing-trunk-horn-decoration-collection-image.jpg)
+        background-image: url(../src/assets/wing-trunk-horn-decoration-collection-image.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center center;
+        background-size: cover;
     }
     /* =====General Class Styles========*/
     
@@ -103,7 +107,7 @@
         padding: 0.75rem 1.2rem;
         border-radius: 0.4rem;
         cursor: pointer;
-        border: 1px solid var(--color-primary);
+        border: 1.5px solid var(--color-primary);
         transition: var(--transition);
     }
     
