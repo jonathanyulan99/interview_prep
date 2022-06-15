@@ -39,6 +39,7 @@ def slide_min(TARGET,ARR):
         sum_sub_array+=ARR[window_end]
         
         while sum_sub_array >= TARGET:
+            # this window_end - window_begin + 1 is key for when the minimum length is just 1 otherwise no way to tell what the length of the two pointers that are pointing to the INPUT ARRAY are 
             temp_min = min(temp_min, window_end-window_begin + 1)
             sum_sub_array-= ARR[window_begin]
             window_begin+=1 
