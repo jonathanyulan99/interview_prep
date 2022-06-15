@@ -51,7 +51,7 @@ def slide_min(TARGET,ARR):
 def main2():
     print("Smallest subarray length: " + str(slide_min(7, [2, 1, 5, 2, 3, 2])))
     print("Smallest subarray length: " + str(slide_min(8, [3, 4, 1, 1, 6])))
-    print("Smallest subarray length: " + str(slide_min(8, [2, 1, 5, 2, 3, 2])))
+    print("Smallest subarray length: " + str(slide_min(8, [2, 1, 5, 2, 3, 2,8])))
     
 main2()            
             
