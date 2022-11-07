@@ -53,6 +53,13 @@ class BST_TREE:
         else:
             return False
     
+    def get_height(self,root):
+        if root is None:
+            return -1 
+        else:
+            height = max(self.get_height(root.leftChild),self.get_height(root.rightChild))
+        return height + 1 
+    
     
 
             

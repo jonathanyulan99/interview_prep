@@ -27,9 +27,10 @@ from avl_node import avlNode
    '''
 
 class avlTree:
-
       def insert(self, root, value):
+            print("value", value)
             if not root:
+               print('executed')
                return avlNode(value)
             elif value < root.value:
                    root.leftChild = self.insert(root.leftChild, value)
@@ -39,10 +40,10 @@ class avlTree:
             # update height
             # height of root node or height of the tree
             root.height = 1 + max(self.getHeight(root.leftChild),self.getHeight(root.rightChild))
-
+            print("root_height:",root.height)
             # balance factor
             balance = self.getBalance(root)
-
+            
             # if Unbalanced
             # Case 1 left-left
             # Unbalanced Node rotate Right
@@ -100,6 +101,7 @@ class avlTree:
             if not node:
                return 0
             else:
+               print(node.height)
                return node.height 
       
       def getBalance(self,node):
@@ -133,21 +135,13 @@ class avlTree:
             self.inOrder(node.rightChild)
 
 myTree = avlTree()
-root = None 
+root = None
 
-root = myTree.insert(root,10)
-root = myTree.insert(root,20)
-root = myTree.insert(root,30)
-root = myTree.insert(root,40)
-root = myTree.insert(root,50)
-root = myTree.insert(root,25)
+root = myTree.insert(root, 10)
+root = myTree.insert(root, 20)
+root = myTree.insert(root, 30)
+root = myTree.insert(root, 40)
+root = myTree.insert(root, 50)
+root = myTree.insert(root, 25)
 
-myTree.preOrder(root)
-print('\n')
-myTree.postOrder(root)
-print('\n')
-myTree.inOrder(root)
-             
-          
-                
-                 
+
