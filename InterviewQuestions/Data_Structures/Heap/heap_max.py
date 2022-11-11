@@ -32,7 +32,7 @@ class MaxHeap:
     def __init__(self):
         # contain the values of the heap
         self.heap = []
-
+        
     # O(log(N)) -> maximum number or nodes that need to be swapped or traversed
     # appends the given value to the heap lists
     # function will swap the values at parent-child nodes until the heap property is restored
@@ -40,6 +40,7 @@ class MaxHeap:
         self.heap.append(val)
         # append to the back, start from the back
         self.__percolateUp(len(self.heap)-1)
+        
 
     def getMax(self):
         if self.heap:
@@ -53,10 +54,12 @@ class MaxHeap:
             # delete the last input in our heap that was swapped
             del self.heap[-1]
             self._maxHeapify(0)
+            self.end-=1
             return max
         elif self.heap and len(self.heap) == 1:
             max = self.heap[0]
             del self.heap[0]
+            self.end-=1
             return max
         else:
             return None
@@ -65,7 +68,7 @@ class MaxHeap:
     # restore the heap property going up from a given node to the root
     # index -> root
     def __percolateUp(self, index):
-        parent_index = (index)-1//2
+        parent_index = (index-1)//2
         if index <= 0:
             return
         # is the parent node currently smaller than the children node inserted
@@ -76,7 +79,7 @@ class MaxHeap:
             self.heap[parent_index] = self.heap[index]
             self.heap[index] = tmp
             # recursively call and traverse by going to the parent index
-            self.__percolateUp(self, parent_index)
+            self.__percolateUp(parent_index)
 
     # meant to be private method *Not enoforceable in Python*
     # restore the heap property starting from a given node to the leaves
@@ -85,9 +88,9 @@ class MaxHeap:
         left_child = 2*index + 1 
         right_child = 2*index + 2 
         parent = index 
-        if len(self.heap) > left and self.heap[parent] < self.heap[left_child]:
+        if len(self.heap) > left_child and self.heap[parent] < self.heap[left_child]:
             parent = left_child 
-        if len(self.heap) > right and self.heap[parent] < self.heap[right_child]:
+        if len(self.heap) > right_child and self.heap[parent] < self.heap[right_child]:
             parent = right_child
         if parent != index:
             # swap
@@ -95,6 +98,21 @@ class MaxHeap:
             self.heap[parent] = self.heap[index]
             self.heap[index] = tmp 
             self._maxheapify(parent) 
+    
+    def _buildHeap(self,arr:list):
+        self.heap = arr 
+        for i in range(len(self.heap)-1,-1,-1):
+            self.__percolateUp(i)
 
 
-heap = MaxHeap()
+hMax = MaxHeap()
+hMax2 = MaxHeap()
+values = [8, 2, 9, 6, 1, 3, 5]
+for value in values:
+    hMax.insert(value)
+print(hMax.getMax())
+print(hMax.heap)
+hMax2._buildHeap(values)
+print(hMax2.getMax())
+print(hMax2.heap)
+from math import *
